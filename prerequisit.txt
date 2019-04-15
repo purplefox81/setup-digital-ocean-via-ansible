@@ -1,0 +1,5 @@
+install ansible on the control machine. in my case I used brew to install ansible on Mac.
+verify the installation by `ansible --version`
+add the ssh pub key of the control machine to the remote machines which to be remotely auto configured
+perform a "ssh root@remoteIp" to make sure we can successfully log in to the remote machine
+create a inventory file named "hosts", which list all remote servers are meant to be configured

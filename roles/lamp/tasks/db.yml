@@ -1,0 +1,18 @@
+- name: install pip
+  apt: name=python3-pip state=present
+
+- name: install libmysqlclient-dev
+  apt: name=libmysqlclient-dev state=present
+
+- name: install python mysqlb module
+  pip: name=mysqlclient
+
+- name: create db user edureka
+  mysql_user: user=edureka password=edureka priv=*.*:ALL state=present
+
+- name: create database edu
+  mysql_db: db=edu state=present
+
+- name: create a table
+  command: mysql -u edureka -pedureka -e 'CREATE TABLE reg (name varchar(30), email varchar(30));' edu
+

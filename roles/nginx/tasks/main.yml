@@ -1,0 +1,10 @@
+- name: setup nginx
+  apt: 
+    pkg: nginx 
+    state: present 
+    update_cache: true
+- name: copy index.html file
+  template: 
+    src: ../files/index.html.j2 
+    dest: /var/www/html/index.html
+

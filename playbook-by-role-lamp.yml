@@ -1,0 +1,5 @@
+- hosts: lampgroup
+  become: yes
+  roles: 
+    - lamp
+

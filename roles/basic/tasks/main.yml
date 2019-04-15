@@ -1,0 +1,27 @@
+
+- name: setup common packages
+  apt: 
+    name:
+      - dnsutils
+      - curl
+      - git
+      - nginx
+    state: present
+    update_cache: true
+
+- name: copy .bashrc
+  copy: 
+    src: ../files/sample-bashrc 
+    dest: /root/sample-bashrc
+    owner: root 
+    group: root 
+    mode: 0644
+
+- name: demo on debug module
+  debug: 
+    msg: "from ip {{ ansible_default_ipv4.address }}: this line is always printed out"
+
+- name: demo on debug module with verbosity
+  debug:
+    msg: "from ip {{ ansible_default_ipv4.address }}: this line is only with ansible-playbook -vv+"
+    verbosity: 2

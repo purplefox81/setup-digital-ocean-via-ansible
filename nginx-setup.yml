@@ -1,0 +1,12 @@
+
+- hosts: firstserver
+  become: yes
+  vars:
+    - WelcomeMessage: "This is my nginx server"
+    - SampleVariable: "sample value"
+  tasks:
+    - name: setup nginx
+      apt: pkg=nginx state=present update_cache=true
+    - name: copy index.html file
+      template: src=index.html.j2 dest=/usr/share/nginx/html/index.html
+

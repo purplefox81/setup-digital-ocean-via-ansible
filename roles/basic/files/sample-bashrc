@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+export PS1='\u@\h \[\033[01;34m\]\w\[\033[00m\] \$ '
+

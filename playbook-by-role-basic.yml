@@ -1,0 +1,5 @@
+- hosts: demogroup
+  become: yes
+  roles: 
+    - basic
+
