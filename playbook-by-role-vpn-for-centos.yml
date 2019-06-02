@@ -1,5 +1,5 @@
 
-- hosts: vpn
+- hosts: vpn-for-centos-only
   become: yes
   roles: 
     - vpn-for-centos

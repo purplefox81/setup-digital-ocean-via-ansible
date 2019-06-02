@@ -26,39 +26,22 @@
   tags:
     - pip
 
-
+# can't use a 'script' module, as it expect the file to exist on control host
+# while in our case, the file is downloaded to the remote host
 - name: run a python script
   command: python get-pip.py
   tags:
     - pip
 
-# can't use a 'script' module, as it expect the file to exist on control host
-# while in our case, the file is downloaded to the remote host
-# - name: run a python script
-#   script: get-pip.py
-#   args:
-#     executable: python
-#   tags:
-#     - pip
-
-
-# 'python -m pip install' is a recommended way comparing to directly run 'pip'
-- name: install pip package
-  command: python -m pip install shadowsocks
+- name: "Install Python packages: {{ python_packages_to_install }}"
+  pip: 
+    name: "{{ python_packages_to_install }}"
   tags:
     - pip
 
-# note this does not work, why? i am not sure
-# - name: install pip package {{ python_packages_to_install }}
-#   command: python -m pip install {{ item }}
-#   with_items: python_packages_to_install
-#   tags:
-#     - pip
-
-# note this does not work either, why? i am not sure
-# - name: "Install Python packages: {{ python_packages_to_install }}"
-#   pip: 
-#     name: python_packages_to_install
+# 'python -m pip install' is a recommended way comparing to directly run 'pip'
+# - name: install pip package
+#   command: python -m pip install shadowsocks
 #   tags:
 #     - pip
 

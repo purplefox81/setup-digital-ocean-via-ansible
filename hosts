@@ -1,21 +1,28 @@
+# many cases, it seems we need to specify the python interpreter for the host
+# for our default choice, the ubuntu os, we may want to write
+# your.ip.is.here ansible_python_interpreter=/usr/bin/python3
+# for centos, we may want to change it to 
+# your.ip.is.here ansible_python_interpreter=/usr/bin/python
+# this line only need to be specified once
+
 [demogroup]
-128.199.136.173
+134.209.99.42
 
 [playground]
-128.199.136.173
+134.209.99.42
 
 [docker]
-128.199.136.173
+134.209.99.42
 
 [nginx]
-128.199.136.173
+134.209.99.42
 
 [lampgroup]
-128.199.136.173
+134.209.99.42
 
 [vpn-for-centos-only]
-128.199.136.173 ansible_python_interpreter=/usr/bin/python
+134.209.99.42
 
 [vpn-for-ubuntu-only]
-128.199.136.173 ansible_python_interpreter=/usr/bin/python3
+134.209.99.42 ansible_python_interpreter=/usr/bin/python3
 

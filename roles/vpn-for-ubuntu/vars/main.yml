@@ -1,3 +1,2 @@
 python_packages_to_install:
   - shadowsocks
-  - this-file-is-not-in-use-for-now
