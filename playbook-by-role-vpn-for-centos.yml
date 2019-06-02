@@ -1,0 +1,6 @@
+
+- hosts: vpn
+  become: yes
+  roles: 
+    - vpn-for-centos
+

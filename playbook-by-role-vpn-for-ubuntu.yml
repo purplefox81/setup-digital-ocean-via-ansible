@@ -1,0 +1,6 @@
+
+- hosts: vpn-for-ubuntu-only
+  become: yes
+  roles: 
+    - vpn-for-ubuntu
+

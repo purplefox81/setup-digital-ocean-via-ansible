@@ -1,17 +1,21 @@
-[lampgroup]
-128.199.82.127
-
 [demogroup]
-178.128.20.82
-178.128.18.246
-167.99.70.13
+128.199.136.173
 
 [playground]
-178.128.20.82
+128.199.136.173
 
 [docker]
-178.128.18.246
+128.199.136.173
 
 [nginx]
-167.99.70.13
+128.199.136.173
+
+[lampgroup]
+128.199.136.173
+
+[vpn-for-centos-only]
+128.199.136.173 ansible_python_interpreter=/usr/bin/python
+
+[vpn-for-ubuntu-only]
+128.199.136.173 ansible_python_interpreter=/usr/bin/python3
 

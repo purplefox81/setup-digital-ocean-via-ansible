@@ -1,0 +1,68 @@
+
+- name: demo on debug module
+  debug: 
+    msg: "this ansible vpn setup script is specifically written for centos @ digital ocean"
+
+- name: copy shadowsocks.json
+  copy: 
+    src: ../files/shadowsocks.json
+    dest: /etc/
+    owner: root 
+    group: root 
+    mode: 0644
+
+- name: copy shadowsocks.service
+  copy: 
+    src: ../files/shadowsocks.service
+    dest: /etc/systemd/system/
+    owner: root 
+    group: root 
+    mode: 0644
+
+- name: Install pip
+  get_url: 
+    url: "https://bootstrap.pypa.io/get-pip.py"
+    dest: "~/get-pip.py"
+  tags:
+    - pip
+
+
+- name: run a python script
+  command: python get-pip.py
+  tags:
+    - pip
+
+# can't use a 'script' module, as it expect the file to exist on control host
+# while in our case, the file is downloaded to the remote host
+# - name: run a python script
+#   script: get-pip.py
+#   args:
+#     executable: python
+#   tags:
+#     - pip
+
+
+# 'python -m pip install' is a recommended way comparing to directly run 'pip'
+- name: install pip package
+  command: python -m pip install shadowsocks
+  tags:
+    - pip
+
+# note this does not work, why? i am not sure
+# - name: install pip package {{ python_packages_to_install }}
+#   command: python -m pip install {{ item }}
+#   with_items: python_packages_to_install
+#   tags:
+#     - pip
+
+# note this does not work either, why? i am not sure
+# - name: "Install Python packages: {{ python_packages_to_install }}"
+#   pip: 
+#     name: python_packages_to_install
+#   tags:
+#     - pip
+
+- name: start vpn service
+  command: systemctl start shadowsocks
+  tags:
+    - pip
