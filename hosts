@@ -6,23 +6,23 @@
 # this line only need to be specified once
 
 [demogroup]
-134.209.99.42
+165.22.245.191
 
 [playground]
-134.209.99.42
+165.22.245.191
 
 [docker]
-134.209.99.42
+165.22.245.191
 
 [nginx]
-134.209.99.42
+165.22.245.191
 
 [lampgroup]
-134.209.99.42
+165.22.245.191
 
 [vpn-for-centos-only]
-134.209.99.42
+159.89.140.194
 
 [vpn-for-ubuntu-only]
-134.209.99.42 ansible_python_interpreter=/usr/bin/python3
+157.245.172.122 ansible_python_interpreter=/usr/bin/python3
 

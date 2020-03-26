@@ -46,10 +46,20 @@ all playbooks are organized according to their roles, there is a directory named
 When a role is called from playbook, the main.yml under its 'tasks' subdirectory is loaded and executed by ansible.
 
 in this project, available commands are
-ansible-playbook -i hosts -u root playbook-by-role-ping.yml
-ansible-playbook -i hosts -u root playbook-by-role-basic.yml
-ansible-playbook -i hosts -u root playbook-by-role-docker.yml
-ansible-playbook -i hosts -u root playbook-by-role-nginx.yml
+* ansible-playbook -i hosts -u root playbook-by-role-ping.yml
+* ansible-playbook -i hosts -u root playbook-by-role-basic.yml
+* ansible-playbook -i hosts -u root playbook-by-role-docker.yml
+* ansible-playbook -i hosts -u root playbook-by-role-nginx.yml
+* ansible-playbook -i hosts -u root playbook-by-role-vpn-for-ubuntu.yml
 
+
+## Additional Notes for VPN
+
+choose ubuntu 16.04 droplet for easy setup
+all vpn config details can be found in shadowsocks.json
+
+as for clients, 
+* on ios, there is a Sockswitch app
+* on windows, search for `shadowsocks-windows` on github. click `System Proxy - Global` after configuring all proxy details to activate the vpn
 
 
